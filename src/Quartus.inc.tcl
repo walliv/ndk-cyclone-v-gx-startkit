@@ -4,16 +4,16 @@
 #
 # SPDX-License-Identifier: BSD-3-Clause
 
-set FIRMWARE_BASE $env(FIRMWARE_BASE)
-set COMBO_BASE $env(COMBO_BASE)
-set CARD_BASE  $env(CARD_BASE)
-set OFM_PATH   $env(OFM_PATH)
-set OUTPUT_NAME   $env(OUTPUT_NAME)
+set FIRMWARE_BASE   $env(FIRMWARE_BASE)
+set COMBO_BASE      $env(COMBO_BASE)
+set CARD_BASE       $env(CARD_BASE)
+set OFM_PATH        $env(OFM_PATH)
+set OUTPUT_NAME     $env(OUTPUT_NAME)
 
 source $OFM_PATH/build/Quartus.inc.tcl
 
 # Prerequisites for generated VHDL package
-set UCP_PREREQ [list $CARD_CONST $CORE_CONF $CARD_CONF [expr {[info exists APP_CONF] ? $APP_CONF : ""}]]
+# set UCP_PREREQ [list $CARD_CONST $CORE_CONF $CARD_CONF [expr {[info exists APP_CONF] ? $APP_CONF : ""}]]
 
 # ----- Default target: synthesis of the project ------------------------------
 proc target_default {} {
