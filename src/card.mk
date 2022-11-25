@@ -1,6 +1,6 @@
 # card.mk: Makefile include for DK-DEV-AGI027RES card
 # Copyright (C) 2021 CESNET z. s. p. o.
-# Author(s): Jakub Cabal <cabal@cesnet.cz>
+# Author(s): Vladislav Valek <vladislav.valek@email.cz>
 #
 # SPDX-License-Identifier: BSD-3-Clause
 
@@ -15,7 +15,7 @@ include $(COMBO_BASE)/conf/ndk_paths.mk
 
 # Name for output files (rootname)
 # This value is set as default in SYNTH_FLAGS(OUTPUT)
-OUTPUT_NAME ?= dk-dev-agi027res
+OUTPUT_NAME ?= cyclone-v-gx-startkit
 
 USER_ENV ?=
 
@@ -25,20 +25,14 @@ USER_ENV ?=
 # Get directory of this Makefile.inc
 CARD_BASE_LOCAL := $(dir $(lastword $(MAKEFILE_LIST)))
 CARD_BASE ?= $(CARD_BASE_LOCAL)/..
-CORE_BASE ?= $(COMBO_BASE)/ndk/core/intel
 
 NETCOPE_ENV = \
 	OFM_PATH=$(OFM_PATH)\
 	COMBO_BASE=$(COMBO_BASE)\
 	FIRMWARE_BASE=$(FIRMWARE_BASE)\
 	CARD_BASE=$(CARD_BASE) \
-	CORE_BASE=$(CORE_BASE) \
 	APP_CONF=$(APP_CONF) \
 	OUTPUT_NAME=$(OUTPUT_NAME) \
-	ETH_PORT_SPEED=$(ETH_PORT_SPEED) \
-    ETH_PORT_CHAN=$(ETH_PORT_CHAN) \
-	DMA_TYPE=$(DMA_TYPE) \
 	$(USER_ENV)
 
-include $(CORE_BASE)/core.mk
 include $(OFM_PATH)/build/Makefile.Quartus.inc

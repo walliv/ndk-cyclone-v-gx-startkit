@@ -1,61 +1,37 @@
 # Quartus.inc.tcl: Quartus.tcl include for DK-DEV-AGI027RES card
 # Copyright (C) 2021 CESNET z. s. p. o.
-# Author(s): Jakub Cabal <cabal@cesnet.cz>
+# Author(s): Vladislav Valek <vladislav.valek@email.cz>
 #
 # SPDX-License-Identifier: BSD-3-Clause
 
-# NDK constants (populates all NDK variables from env)
-source $env(CORE_BASE)/config/core_bootstrap.tcl
+set FIRMWARE_BASE $env(FIRMWARE_BASE)
+set COMBO_BASE $env(COMBO_BASE)
+set CARD_BASE  $env(CARD_BASE)
+set OFM_PATH   $env(OFM_PATH)
+set OUTPUT_NAME   $env(OUTPUT_NAME)
 
-# Include card common script
-source $CORE_BASE/Quartus.inc.tcl
+source $OFM_PATH/build/Quartus.inc.tcl
 
-# Propagating card constants to the Modules.tcl files of the underlying components.
-# The description of usage of this array is provided in the Parametrization section
-# of the NDK-CORE repository.
-set CARD_ARCHGRP(CORE_BASE)         $CORE_BASE
-set CARD_ARCHGRP(NET_MOD_ARCH)      $NET_MOD_ARCH
-# Second dimension because of addition of an element of another array, just for clarity.
-set CARD_ARCHGRP(ETH_PORT_SPEED,0)  $ETH_PORT_SPEED(0)
+# Prerequisites for generated VHDL package
+set UCP_PREREQ [list $CARD_CONST $CORE_CONF $CARD_CONF [expr {[info exists APP_CONF] ? $APP_CONF : ""}]]
 
-# make lists from associative arrays
-set CARD_ARCHGRP_L [array get CARD_ARCHGRP]
-set CORE_ARCHGRP_L [array get CORE_ARCHGRP]
-
-# concatenate lists to be handed as a part of the ARCHGRP to the TOPLEVEL
-set ARCHGRP_ALL [concat $CARD_ARCHGRP_L $CORE_ARCHGRP_L]
+# ----- Default target: synthesis of the project ------------------------------
+proc target_default {} {
+    global SYNTH_FLAGS HIERARCHY
+    SynthesizeProject SYNTH_FLAGS HIERARCHY
+}
 
 # Main component
-lappend HIERARCHY(COMPONENTS) \
-    [list "TOPLEVEL" $CARD_BASE/src $ARCHGRP_ALL]
+lappend HIERARCHY(COMPONENTS) [list "TOPLEVEL" $CARD_BASE/src "$COMBO_BASE"]
 
 # Design parameters
-set SYNTH_FLAGS(MODULE) "FPGA"
-set SYNTH_FLAGS(FPGA)   "AGIB027R29A1E2VR0"
+set SYNTH_FLAGS(MODULE) "TOP_FPGA"
+set SYNTH_FLAGS(FPGA)   "5CSEMA5F31C6"
 # Enable Quartus Support-Logic Generation stage
-set SYNTH_FLAGS(QUARTUS_TLG) 1
+set SYNTH_FLAGS(OUTPUT) $OUTPUT_NAME
+set SYNTH_FLAGS(ASSERT_OFF) 1
 
 # QSF constraints for specific parts of the design
 set SYNTH_FLAGS(CONSTR) ""
 set SYNTH_FLAGS(CONSTR) "$SYNTH_FLAGS(CONSTR) $CARD_BASE/constr/timing.sdc"
-set SYNTH_FLAGS(CONSTR) "$SYNTH_FLAGS(CONSTR) $CARD_BASE/constr/pcie.qsf"
-set SYNTH_FLAGS(CONSTR) "$SYNTH_FLAGS(CONSTR) $CARD_BASE/constr/ddr4_sodimm.qsf"
 set SYNTH_FLAGS(CONSTR) "$SYNTH_FLAGS(CONSTR) $CARD_BASE/constr/general.qsf"
-
-if {$PCIE_ENDPOINT_MODE == 1} {
-    set PCIE_HIPS [expr $PCIE_ENDPOINTS/2]
-} else {
-    set PCIE_HIPS $PCIE_ENDPOINTS
-}
-
-if {$PCIE_HIPS == 2} {
-    set SYNTH_FLAGS(CONSTR) "$SYNTH_FLAGS(CONSTR) $CARD_BASE/constr/cxl.qsf"
-} else {
-    set SYNTH_FLAGS(CONSTR) "$SYNTH_FLAGS(CONSTR) $CARD_BASE/constr/cxl_virtual.qsf"
-}
-
-if {$NET_MOD_ARCH == "F_TILE"} {
-    set SYNTH_FLAGS(CONSTR) "$SYNTH_FLAGS(CONSTR) $CARD_BASE/constr/qsfp.qsf"
-} else {
-    set SYNTH_FLAGS(CONSTR) "$SYNTH_FLAGS(CONSTR) $CARD_BASE/constr/qsfp_virtual.qsf"
-}
