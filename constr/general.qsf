@@ -1,0 +1,131 @@
+# general.qsf
+# Copyright (C) 2022 CESNET z. s. p. o.
+# Author(s): Vladislav Valek <vladislav.valek@email.cz>
+#
+# SPDX-License-Identifier: BSD-3-Clause
+
+# ==============================================================================
+# Pin Locations
+# ==============================================================================
+set_location_assignment PIN_AF14 -to CLK
+
+set_location_assignment PIN_Y16 -to BTN_I[3]
+set_location_assignment PIN_W15 -to BTN_I[2]
+set_location_assignment PIN_AA15 -to BTN_I[1]
+set_location_assignment PIN_AA14 -to BTN_I[0]
+
+set_location_assignment PIN_V16 -to LED_O[0]
+set_location_assignment PIN_V17 -to LED_O[2]
+set_location_assignment PIN_W16 -to LED_O[1]
+set_location_assignment PIN_V18 -to LED_O[3]
+set_location_assignment PIN_W17 -to LED_O[4]
+set_location_assignment PIN_W19 -to LED_O[5]
+set_location_assignment PIN_Y19 -to LED_O[6]
+set_location_assignment PIN_W20 -to LED_O[7]
+set_location_assignment PIN_W21 -to LED_O[8]
+set_location_assignment PIN_Y21 -to LED_O[9]
+
+set_location_assignment PIN_AE26 -to DISP_DIG_0[0]
+set_location_assignment PIN_AE27 -to DISP_DIG_0[1]
+set_location_assignment PIN_AE28 -to DISP_DIG_0[2]
+set_location_assignment PIN_AG27 -to DISP_DIG_0[3]
+set_location_assignment PIN_AF28 -to DISP_DIG_0[4]
+set_location_assignment PIN_AG28 -to DISP_DIG_0[5]
+set_location_assignment PIN_AH28 -to DISP_DIG_0[6]
+
+set_location_assignment PIN_AJ29 -to DISP_DIG_1[0]
+set_location_assignment PIN_AH29 -to DISP_DIG_1[1]
+set_location_assignment PIN_AH30 -to DISP_DIG_1[2]
+set_location_assignment PIN_AG30 -to DISP_DIG_1[3]
+set_location_assignment PIN_AF29 -to DISP_DIG_1[4]
+set_location_assignment PIN_AF30 -to DISP_DIG_1[5]
+set_location_assignment PIN_AD27 -to DISP_DIG_1[6]
+
+set_location_assignment PIN_AB23 -to DISP_DIG_2[0]
+set_location_assignment PIN_AE29 -to DISP_DIG_2[1]
+set_location_assignment PIN_AD29 -to DISP_DIG_2[2]
+set_location_assignment PIN_AC28 -to DISP_DIG_2[3]
+set_location_assignment PIN_AD30 -to DISP_DIG_2[4]
+set_location_assignment PIN_AC29 -to DISP_DIG_2[5]
+set_location_assignment PIN_AC30 -to DISP_DIG_2[6]
+
+set_location_assignment PIN_AD26 -to DISP_DIG_3[0]
+set_location_assignment PIN_AC27 -to DISP_DIG_3[1]
+set_location_assignment PIN_AD25 -to DISP_DIG_3[2]
+set_location_assignment PIN_AC25 -to DISP_DIG_3[3]
+set_location_assignment PIN_AB28 -to DISP_DIG_3[4]
+set_location_assignment PIN_AB25 -to DISP_DIG_3[5]
+set_location_assignment PIN_AB22 -to DISP_DIG_3[6]
+
+set_location_assignment PIN_AA24 -to DISP_DIG_4[0]
+set_location_assignment PIN_Y23 -to DISP_DIG_4[1]
+set_location_assignment PIN_Y24 -to DISP_DIG_4[2]
+set_location_assignment PIN_W22 -to DISP_DIG_4[3]
+set_location_assignment PIN_W24 -to DISP_DIG_4[4]
+set_location_assignment PIN_V23 -to DISP_DIG_4[5]
+set_location_assignment PIN_W25 -to DISP_DIG_4[6]
+
+set_location_assignment PIN_V25 -to DISP_DIG_5[0]
+set_location_assignment PIN_AA28 -to DISP_DIG_5[1]
+set_location_assignment PIN_Y27 -to DISP_DIG_5[2]
+set_location_assignment PIN_AB27 -to DISP_DIG_5[3]
+set_location_assignment PIN_AB26 -to DISP_DIG_5[4]
+set_location_assignment PIN_AA26 -to DISP_DIG_5[5]
+set_location_assignment PIN_AA25 -to DISP_DIG_5[6]
+
+
+set_location_assignment PIN_AB12 -to SW_I[0]
+set_location_assignment PIN_AC12 -to SW_I[1]
+set_location_assignment PIN_AF9 -to SW_I[2]
+set_location_assignment PIN_AF10 -to SW_I[3]
+set_location_assignment PIN_AD11 -to SW_I[4]
+set_location_assignment PIN_AD12 -to SW_I[5]
+set_location_assignment PIN_AE11 -to SW_I[6]
+set_location_assignment PIN_AC9 -to SW_I[7]
+set_location_assignment PIN_AD10 -to SW_I[8]
+set_location_assignment PIN_AE12 -to SW_I[9]
+
+# ==============================================================================
+# Pin IO Standards & Input Termination 
+# ==============================================================================
+
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to BTN_I
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to CLK
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to LED_O
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to SW_I
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DISP_DIG_0
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DISP_DIG_1
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DISP_DIG_2
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DISP_DIG_3
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DISP_DIG_4
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DISP_DIG_5
+
+# ==============================================================================
+# Others assignments
+# ==============================================================================
+
+#set_global_assignment -name OPTIMIZATION_MODE "HIGH PERFORMANCE EFFORT"
+
+set_global_assignment -name MIN_CORE_JUNCTION_TEMP 0
+set_global_assignment -name MAX_CORE_JUNCTION_TEMP 100
+
+set_global_assignment -name FAMILY "Cyclone V"
+#set_global_assignment -name DEVICE 5CSEMA5F31C6
+set_global_assignment -name DEVICE 5CGXFC5C6F27C7
+set_global_assignment -name BOARD "DE1-SoC Board"
+
+set_global_assignment -name TOP_LEVEL_ENTITY TOP_FPGA
+
+set_global_assignment -name POWER_PRESET_COOLING_SOLUTION "NO HEAT SINK WITH STILL AIR"
+set_global_assignment -name POWER_BOARD_THERMAL_MODEL "NONE (CONSERVATIVE)"
+
+set_global_assignment -name VHDL_INPUT_VERSION VHDL_2008
+set_global_assignment -name NUM_PARALLEL_PROCESSORS ALL
+
+
+#set_global_assignment -name VHDL_FILE sources/segment_cycle.vhd
+#set_global_assignment -name SDC_FILE sources/top_fpga.sdc
+#set_global_assignment -name VHDL_FILE sources/top_fpga.vhd -hdl_version VHDL_2008
+#set_global_assignment -name VHDL_FILE sources/pwm_driver.vhd -hdl_version VHDL_2008
+#set_global_assignment -name VHDL_FILE sources/cnt_gen.vhd -hdl_version VHDL_2008
+#set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
