@@ -6,115 +6,136 @@
 # ==============================================================================
 # Pin Locations
 # ==============================================================================
-set_location_assignment PIN_R20 -to CLK
-
-set_location_assignment PIN_P11 -to BTN_I[0]
-set_location_assignment PIN_P12 -to BTN_I[1]
-set_location_assignment PIN_Y15 -to BTN_I[2]
-set_location_assignment PIN_Y16 -to BTN_I[3]
-
-set_location_assignment PIN_AC9 -to SW_I[0]
-set_location_assignment PIN_AE10 -to SW_I[1]
-set_location_assignment PIN_AD13 -to SW_I[2]
-set_location_assignment PIN_AC8 -to SW_I[3]
-set_location_assignment PIN_W11 -to SW_I[4]
-set_location_assignment PIN_AB10 -to SW_I[5]
-set_location_assignment PIN_V10 -to SW_I[6]
-set_location_assignment PIN_AC10 -to SW_I[7]
-set_location_assignment PIN_Y11 -to SW_I[8]
-set_location_assignment PIN_AE19 -to SW_I[9]
-
-set_location_assignment PIN_F7 -to LEDR_O[0]
-set_location_assignment PIN_F6 -to LEDR_O[2]
-set_location_assignment PIN_G6 -to LEDR_O[1]
-set_location_assignment PIN_G7 -to LEDR_O[3]
-set_location_assignment PIN_J8 -to LEDR_O[4]
-set_location_assignment PIN_J7 -to LEDR_O[5]
-set_location_assignment PIN_K10 -to LEDR_O[6]
-set_location_assignment PIN_K8 -to LEDR_O[7]
-set_location_assignment PIN_H7 -to LEDR_O[8]
-set_location_assignment PIN_J10 -to LEDR_O[9]
-
-set_location_assignment PIN_L7 -to LEDG_O[0]
-set_location_assignment PIN_K6 -to LEDG_O[2]
-set_location_assignment PIN_D8 -to LEDG_O[1]
-set_location_assignment PIN_E9 -to LEDG_O[3]
-set_location_assignment PIN_A5 -to LEDG_O[4]
-set_location_assignment PIN_B6 -to LEDG_O[5]
-set_location_assignment PIN_H8 -to LEDG_O[6]
-set_location_assignment PIN_H9 -to LEDG_O[7]
-
-set_location_assignment PIN_V19 -to DISP_DIG_0[0]
-set_location_assignment PIN_V18 -to DISP_DIG_0[1]
-set_location_assignment PIN_V17 -to DISP_DIG_0[2]
-set_location_assignment PIN_W18 -to DISP_DIG_0[3]
-set_location_assignment PIN_Y20 -to DISP_DIG_0[4]
-set_location_assignment PIN_Y19 -to DISP_DIG_0[5]
-set_location_assignment PIN_Y18 -to DISP_DIG_0[6]
-
-set_location_assignment PIN_AA18 -to DISP_DIG_1[0]
-set_location_assignment PIN_AD26 -to DISP_DIG_1[1]
-set_location_assignment PIN_AB19 -to DISP_DIG_1[2]
-set_location_assignment PIN_AE26 -to DISP_DIG_1[3]
-set_location_assignment PIN_AE25 -to DISP_DIG_1[4]
-set_location_assignment PIN_AC19 -to DISP_DIG_1[5]
-set_location_assignment PIN_AF24 -to DISP_DIG_1[6]
-
-set_location_assignment PIN_AD7 -to DISP_DIG_2[0]
-set_location_assignment PIN_AD6 -to DISP_DIG_2[1]
-set_location_assignment PIN_U20 -to DISP_DIG_2[2]
-set_location_assignment PIN_V22 -to DISP_DIG_2[3]
-set_location_assignment PIN_V20 -to DISP_DIG_2[4]
-set_location_assignment PIN_W21 -to DISP_DIG_2[5]
-set_location_assignment PIN_W20 -to DISP_DIG_2[6]
-
-set_location_assignment PIN_Y24 -to DISP_DIG_3[0]
-set_location_assignment PIN_Y23 -to DISP_DIG_3[1]
-set_location_assignment PIN_AA23 -to DISP_DIG_3[2]
-set_location_assignment PIN_AA22 -to DISP_DIG_3[3]
-set_location_assignment PIN_AC24 -to DISP_DIG_3[4]
-set_location_assignment PIN_AC23 -to DISP_DIG_3[5]
-set_location_assignment PIN_AC22 -to DISP_DIG_3[6]
+# set_location_assignment PIN_R20 -to CLK
+#
+# set_location_assignment PIN_P11 -to BTN_I[0]
+# set_location_assignment PIN_P12 -to BTN_I[1]
+# set_location_assignment PIN_Y15 -to BTN_I[2]
+# set_location_assignment PIN_Y16 -to BTN_I[3]
+#
+# set_location_assignment PIN_AC9 -to SW_I[0]
+# set_location_assignment PIN_AE10 -to SW_I[1]
+# set_location_assignment PIN_AD13 -to SW_I[2]
+# set_location_assignment PIN_AC8 -to SW_I[3]
+# set_location_assignment PIN_W11 -to SW_I[4]
+# set_location_assignment PIN_AB10 -to SW_I[5]
+# set_location_assignment PIN_V10 -to SW_I[6]
+# set_location_assignment PIN_AC10 -to SW_I[7]
+# set_location_assignment PIN_Y11 -to SW_I[8]
+# set_location_assignment PIN_AE19 -to SW_I[9]
+#
+# set_location_assignment PIN_F7 -to LEDR_O[0]
+# set_location_assignment PIN_F6 -to LEDR_O[2]
+# set_location_assignment PIN_G6 -to LEDR_O[1]
+# set_location_assignment PIN_G7 -to LEDR_O[3]
+# set_location_assignment PIN_J8 -to LEDR_O[4]
+# set_location_assignment PIN_J7 -to LEDR_O[5]
+# set_location_assignment PIN_K10 -to LEDR_O[6]
+# set_location_assignment PIN_K8 -to LEDR_O[7]
+# set_location_assignment PIN_H7 -to LEDR_O[8]
+# set_location_assignment PIN_J10 -to LEDR_O[9]
+#
+# set_location_assignment PIN_L7 -to LEDG_O[0]
+# set_location_assignment PIN_K6 -to LEDG_O[2]
+# set_location_assignment PIN_D8 -to LEDG_O[1]
+# set_location_assignment PIN_E9 -to LEDG_O[3]
+# set_location_assignment PIN_A5 -to LEDG_O[4]
+# set_location_assignment PIN_B6 -to LEDG_O[5]
+# set_location_assignment PIN_H8 -to LEDG_O[6]
+# set_location_assignment PIN_H9 -to LEDG_O[7]
+#
+# set_location_assignment PIN_V19 -to DISP_DIG_0[0]
+# set_location_assignment PIN_V18 -to DISP_DIG_0[1]
+# set_location_assignment PIN_V17 -to DISP_DIG_0[2]
+# set_location_assignment PIN_W18 -to DISP_DIG_0[3]
+# set_location_assignment PIN_Y20 -to DISP_DIG_0[4]
+# set_location_assignment PIN_Y19 -to DISP_DIG_0[5]
+# set_location_assignment PIN_Y18 -to DISP_DIG_0[6]
+#
+# set_location_assignment PIN_AA18 -to DISP_DIG_1[0]
+# set_location_assignment PIN_AD26 -to DISP_DIG_1[1]
+# set_location_assignment PIN_AB19 -to DISP_DIG_1[2]
+# set_location_assignment PIN_AE26 -to DISP_DIG_1[3]
+# set_location_assignment PIN_AE25 -to DISP_DIG_1[4]
+# set_location_assignment PIN_AC19 -to DISP_DIG_1[5]
+# set_location_assignment PIN_AF24 -to DISP_DIG_1[6]
+#
+# set_location_assignment PIN_AD7 -to DISP_DIG_2[0]
+# set_location_assignment PIN_AD6 -to DISP_DIG_2[1]
+# set_location_assignment PIN_U20 -to DISP_DIG_2[2]
+# set_location_assignment PIN_V22 -to DISP_DIG_2[3]
+# set_location_assignment PIN_V20 -to DISP_DIG_2[4]
+# set_location_assignment PIN_W21 -to DISP_DIG_2[5]
+# set_location_assignment PIN_W20 -to DISP_DIG_2[6]
+#
+# set_location_assignment PIN_Y24 -to DISP_DIG_3[0]
+# set_location_assignment PIN_Y23 -to DISP_DIG_3[1]
+# set_location_assignment PIN_AA23 -to DISP_DIG_3[2]
+# set_location_assignment PIN_AA22 -to DISP_DIG_3[3]
+# set_location_assignment PIN_AC24 -to DISP_DIG_3[4]
+# set_location_assignment PIN_AC23 -to DISP_DIG_3[5]
+# set_location_assignment PIN_AC22 -to DISP_DIG_3[6]
 
 # ==============================================================================
 # Pin IO Standards & Input Termination 
 # ==============================================================================
 
-set_instance_assignment -name IO_STANDARD "1.2-V" -to BTN_I
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to CLK
-set_instance_assignment -name IO_STANDARD "2.5-V" -to LEDR_O
-set_instance_assignment -name IO_STANDARD "2.5-V" -to LEDG_O
-set_instance_assignment -name IO_STANDARD "1.2-V" -to SW_I
-set_instance_assignment -name IO_STANDARD "1.2-V" -to DISP_DIG_0
-set_instance_assignment -name IO_STANDARD "1.2-V" -to DISP_DIG_1
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DISP_DIG_2
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DISP_DIG_3
+# set_instance_assignment -name IO_STANDARD "1.2-V" -to BTN_I
+# set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to CLK
+# set_instance_assignment -name IO_STANDARD "2.5-V" -to LEDR_O
+# set_instance_assignment -name IO_STANDARD "2.5-V" -to LEDG_O
+# set_instance_assignment -name IO_STANDARD "1.2-V" -to SW_I
+# set_instance_assignment -name IO_STANDARD "1.2-V" -to DISP_DIG_0
+# set_instance_assignment -name IO_STANDARD "1.2-V" -to DISP_DIG_1
+# set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DISP_DIG_2
+# set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DISP_DIG_3
+
+set_location_assignment PIN_R20 -to CLK_50
+set_location_assignment PIN_T21 -to L1_OSC
+set_location_assignment PIN_T22 -to L1_CRS_DV
+set_location_assignment PIN_M21 -to L1_RX0
+set_location_assignment PIN_P20 -to L1_RX1
+set_location_assignment PIN_E26 -to L1_TX0
+set_location_assignment PIN_K26 -to L1_TX1
+set_location_assignment PIN_M26 -to L1_TX_EN
+set_location_assignment PIN_M9 -to UART_RX
+set_location_assignment PIN_L9 -to UART_TX
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to CLK_50
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to L1_OSC
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to L1_CRS_DV
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to L1_RX0
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to L1_RX1
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to L1_TX0
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to L1_TX1
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to L1_TX_EN
 
 # ==============================================================================
 # Others assignments
 # ==============================================================================
-
-#set_global_assignment -name OPTIMIZATION_MODE "HIGH PERFORMANCE EFFORT"
 
 set_global_assignment -name MIN_CORE_JUNCTION_TEMP 0
 set_global_assignment -name MAX_CORE_JUNCTION_TEMP 85
 
 set_global_assignment -name FAMILY "Cyclone V"
 set_global_assignment -name DEVICE 5CGXFC5C6F27C7
-set_global_assignment -name BOARD "DE1-SoC Board"
+set_global_assignment -name BOARD "Cyclone V GX Starter Kit"
 
 set_global_assignment -name TOP_LEVEL_ENTITY TOP_FPGA
+set_global_assignment -name ERROR_CHECK_FREQUENCY_DIVISOR 256
 
-set_global_assignment -name POWER_PRESET_COOLING_SOLUTION "NO HEAT SINK WITH STILL AIR"
+set_global_assignment -name POWER_PRESET_COOLING_SOLUTION "23 MM HEAT SINK WITH 200 LFPM AIRFLOW"
 set_global_assignment -name POWER_BOARD_THERMAL_MODEL "NONE (CONSERVATIVE)"
+set_global_assignment -name ORIGINAL_QUARTUS_VERSION 20.1.1
 
 set_global_assignment -name VHDL_INPUT_VERSION VHDL_2008
 set_global_assignment -name NUM_PARALLEL_PROCESSORS ALL
 
+set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
+set_global_assignment -name ENABLE_SIGNALTAP OFF
 
-#set_global_assignment -name VHDL_FILE sources/segment_cycle.vhd
-#set_global_assignment -name SDC_FILE sources/top_fpga.sdc
-#set_global_assignment -name VHDL_FILE sources/top_fpga.vhd -hdl_version VHDL_2008
-#set_global_assignment -name VHDL_FILE sources/pwm_driver.vhd -hdl_version VHDL_2008
-#set_global_assignment -name VHDL_FILE sources/cnt_gen.vhd -hdl_version VHDL_2008
-#set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
+set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
+set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
+set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
+
+set_global_assignment -name EDA_SIMULATION_TOOL "ModelSim-Altera (SystemVerilog)"
+set_global_assignment -name EDA_OUTPUT_DATA_FORMAT "VHDL" -section_id eda_simulation
